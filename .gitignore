@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Credentials and tokens (sensitive)
+.calender-to-google/
+credentials.json
+token.json
+
+# Log files
+*.log
+startup_error.log
+
+# IDE/Editor
+.vscode/
+.idea/
+
+# Claude Code config (personal)
+.mcp.json

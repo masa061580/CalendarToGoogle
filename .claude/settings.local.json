@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv init:*)",
+      "Bash(uv add:*)",
+      "Bash(cat:*)",
+      "Bash(uv sync:*)",
+      "Bash(uv run python:*)",
+      "Bash(python3 -m py_compile:*)",
+      "Bash(chmod:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "context7"
+  ]
+}

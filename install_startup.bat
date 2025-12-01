@@ -14,20 +14,19 @@ echo.
 echo Creating startup script...
 
 :: Create VBS launcher with proper path handling
-> "%VBS_PATH%" (
     echo On Error Resume Next
     echo Set WshShell = CreateObject^("WScript.Shell"^)
     echo Set FSO = CreateObject^("Scripting.FileSystemObject"^)
     echo.
-    echo AppDir = "%APP_DIR%"
-    echo PythonExe = AppDir ^& ".venv\Scripts\pythonw.exe"
-    echo LauncherScript = AppDir ^& "calendar_to_google\launcher.pyw"
+    echo AppDir = "%APP_DIR:~0,-1%"
+    echo PythonExe = AppDir ^& "\.venv\Scripts\pythonw.exe"
+    echo LauncherScript = AppDir ^& "\calendar_to_google\launcher.py"
     echo.
     echo If FSO.FileExists^(PythonExe^) Then
     echo     WshShell.CurrentDirectory = AppDir
     echo     WshShell.Run """" ^& PythonExe ^& """ """ ^& LauncherScript ^& """", 0, False
     echo Else
-    echo     MsgBox "Python not found: " ^& PythonExe, vbCritical, "Calendar to Google"
+    echo     MsgBox "Python not found in .venv. Please run install_setup.bat first.", vbCritical, "Calendar to Google"
     echo End If
 )
 
